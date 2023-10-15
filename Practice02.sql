@@ -212,11 +212,16 @@ LEFT JOIN aktorler AS B ON A.film_id=B.film_id;
 select * from aktorler as B right join filmler as A ON A.film_id=B.film_id;
 
 --Soru-16: tüm actor_name leri ve oynadigi film name leri listeleyiniz
-select actor_name, film_name from aktorler as A
-right join filmler as B on A.film_id=B.film_id;
+select actor_name,film_name 
+from aktorler as A
+left join filmler as B on A.film_id=B.film_id;
 
+-- 2. yol :
 
-
+select actor_name,film_name 
+from filmler as B
+right join aktorler as A
+on A.film_id=B.film_id;
 
 
 
